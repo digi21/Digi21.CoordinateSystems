@@ -7,7 +7,8 @@ namespace Digi21.CoordinateSystems
     {
         private CoordinateTransformation() { }
         ~CoordinateTransformation() { }
-        public static CoordinateTransformation Create(CoordinateSystem source, CoordinateSystem target, TransformationOptions options = null) => throw null;
+        public static CoordinateTransformation Create(CoordinateSystem source, CoordinateSystem target, TransformationOptions options) => throw null;
+        public static CoordinateTransformation Create(CoordinateSystem source, CoordinateSystem target) => throw null;
         public CoordinateSystem Source => throw null;
         public CoordinateSystem Target => throw null;
         public string Name => throw null;
