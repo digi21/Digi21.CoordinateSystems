@@ -2,15 +2,15 @@
 
 # Digi21.CoordinateSystems
 
-Este repositorio contiene el código fuente del [ensamblado de referencia](https://learn.microsoft.com/dotnet/standard/assembly/reference-assemblies) `Digi21.CoordinateSystems`, que se distribuye en el paquete NuGet del mismo nombre para transformar coordenadas entre sistemas de referencia de coordenadas con Digi3D.AI.
+This repository contains the source code of the [reference assembly](https://learn.microsoft.com/dotnet/standard/assembly/reference-assemblies) `Digi21.CoordinateSystems`, distributed in the NuGet package of the same name, for transforming coordinates between coordinate reference systems with Digi3D.AI.
 
-Los métodos del ensamblado de referencia no tienen implementación (`throw null`). Digi3D.AI instala la implementación en `<carpeta de instalación>\Digi21.CoordinateSystems\26.0.0\`, y el resolvedor que añade el paquete `Digi21.DigiNG` la carga en tiempo de ejecución.
+The methods of the reference assembly have no implementation (`throw null`). Digi3D.AI installs the implementation in `<installation folder>\Digi21.CoordinateSystems\26.0.0\`, and the resolver added by the `Digi21.DigiNG` package loads it at run time.
 
-La documentación de la API está en la [ayuda de Digi3D.AI](https://ayuda.digi21.net/digi3d-ai/programacion/.net/digi21.coordinatesystems).
+The API documentation is in the [Digi3D.AI help](https://ayuda.digi21.net/digi3d-ai/programacion/.net/digi21.coordinatesystems).
 
-## Publicación
+## Publishing
 
-1. Actualiza la versión en `<version>` del archivo `NuGet/Digi21.CoordinateSystems.nuspec` y, si cambia la versión del ensamblado, en `Version`, `AssemblyVersion` y `FileVersion` del `.csproj`.
-2. Crea una etiqueta `v<versión>` igual a la versión del `.nuspec` y envíala a GitHub.
+1. Update `<version>` in `NuGet/Digi21.CoordinateSystems.nuspec` and, if the assembly version changes, `Version`, `AssemblyVersion` and `FileVersion` in the `.csproj`.
+2. Push a tag `v<version>` that matches the version in the `.nuspec`.
 
-El flujo de trabajo *Release* compila el ensamblado de referencia, crea el paquete y lo publica en nuget.org con *trusted publishing* (el secreto del repositorio `NUGET_USER` contiene el nombre del perfil de nuget.org, no la dirección de correo). Los paquetes no llevan firma de autor; el ensamblado de referencia lleva firma pública (*public signing*) con `Digi21.PublicKey.snk`, que solo contiene la clave pública.
+The *Release* workflow builds the reference assembly, packs it and publishes it to nuget.org with trusted publishing (repository secret `NUGET_USER`, the nuget.org profile name, not the email address). The packages are not author-signed; the reference assembly is public-signed with `Digi21.PublicKey.snk`, which contains only the public key.
